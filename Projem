@@ -1,0 +1,598 @@
+/////Bu uygulama size Kayıt olma,Giriş yapma algoritmasını gösterir.Giriş başarılı olduğunda,hatallı olduğunda if else komutları ile 
+////gösterilmeye çalışılmıştır.
+/////
+/////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Salih'in Projesi";
+
+
+
+            string sifre1, kullaniciadi, sifre12, kullaniciadi2;
+
+
+
+
+            Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Projeme hoşgeldiniz.Devam etmek için tıklayınız");
+                Console.Write("Adınızı girin:");
+                string ad = Console.ReadLine();
+                Console.Write("Soyadınızı girin:");
+                string soyad = Console.ReadLine();
+
+                Console.WriteLine("Kayıt ol");
+                Console.Write("Kullanıcı adı:");
+                kullaniciadi = Console.ReadLine();
+                Console.Write("Şifre:");
+                sifre1 = Console.ReadLine();
+                Console.Write("Şifre tekrar:");
+
+                sifre12 = Console.ReadLine();
+
+                if (sifre1 != sifre12)
+
+                {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Kayıt olma başarısız.Lütfen tekrar deneyin");
+                    Console.ReadLine();
+                   
+
+
+                }
+
+              
+
+                if (sifre1 == sifre12)
+                {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Kayıt olma başarılı!");
+                    for (; ; )
+                    {
+
+                        Console.WriteLine("GİRİŞ YAP");
+                        Console.Write("Kullanıcı Adı:");
+                        kullaniciadi2 = Console.ReadLine();
+                        Console.Write("Şifre:");
+                        string sifre2 = Console.ReadLine();
+
+
+
+
+                        if (sifre1 == sifre2 && kullaniciadi == kullaniciadi2)
+
+                        {
+                            for (; ; )
+                            {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+
+
+                            Console.WriteLine("Hoşgeldiniz {0} {1}", ad, soyad);
+                     
+                                Console.Clear();
+                            Console.WriteLine("Hoşgeldiniz {0} {1}", ad, soyad);
+                            Console.WriteLine("Girişi başarılı yaptınız.İşte size projelerim;");
+                                Console.WriteLine("Geometri formülleri için 1; ");
+                                Console.WriteLine("Kaç kelime yazdığınızı öğrenmek için 2;");//
+                                Console.WriteLine("Hesap makinesi için 3;");//
+                                Console.WriteLine("Kaç gün yaşadığınızı öğrenmek için 4'e tıklayın.");//
+                                Console.WriteLine("Faktöriyel bulmak için 5;");
+                                Console.WriteLine("Lütfen işlem seçiniz:");
+
+                                double islemno = Double.Parse(Console.ReadLine());
+
+                            if (islemno == 1)
+                            {
+                                for (; ; )
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                                    Console.WriteLine("Karenin çevresini bulmak için 1;");//
+                                    Console.WriteLine("Karenin alanını bulmak için 2;");//
+                                    Console.WriteLine("Çemberin alanını bulmak istiyorsanız 3;");//
+                                    Console.WriteLine("Çmeberin çevresini bulmak için 4;");//
+                                    Console.WriteLine("Çemberin dilimlik alanını bulmak için 5;");//
+                                    Console.WriteLine("Üçgenin alanını bulmak için 6;");//   
+
+                                    Console.Write("Lütfen işlem seçiniz:");
+                                    double islemno1 = Double.Parse(Console.ReadLine());
+
+                                    if (islemno1 == 2)////karenin alanı
+                                    {
+                                        Console.Write("Karenin kenarını yazınız:");
+                                        double sayi678 = Double.Parse(Console.ReadLine());
+                                        double islemsonucu;
+                                        islemsonucu = sayi678 * sayi678;
+                                        Console.Write("Karenin alanı {0}*{1}={2}", sayi678, sayi678, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+
+
+                                        Console.ReadLine();
+                                    }////karenin alanı 
+
+
+                                    if (islemno1 == 4)//çemberin çevresi
+                                    {
+                                        double islemsonucu;
+                                        Console.WriteLine("Yarıçapı yazınız:");
+                                        double sayi89 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = 2 * sayi89 * 3;
+                                        Console.WriteLine("İşlem sonucu {0}*{1}*{2}={3}", 2, sayi89, 3, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+
+                                    }//çemberin çevresi
+
+
+
+
+                                    if (islemno1 == 3)//çemberin alanı                     
+                                    {
+                                        double islemsonucu;
+                                        Console.WriteLine("Yarıçapını yazınız:");
+                                        double sayi98 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = 3 * sayi98 * sayi98 * 2;
+                                        Console.WriteLine("İşlem sonucu {0}*{1}*{2}*{3}={4}", 3, sayi98, sayi98, 2, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+                                    }//çemberin alanı
+
+
+
+
+
+
+
+
+
+
+
+                                    if (islemno1 == 5)//çemberin dilimlik alanı
+                                    {
+                                        double islemsonucu;
+                                        Console.WriteLine("Çemberin yarıçapını yazınız:");
+                                        double sayi78 = Double.Parse(Console.ReadLine());
+                                        Console.WriteLine("Çemberin dilim açısını yazınız");
+                                        double sayi31 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = 3 * sayi78 * sayi78 * (sayi31 / 360);
+                                        Console.WriteLine("Çemberin dilimlik alanı {0}*{1}*{2}*{3}/{4}={5}", 3, sayi78, sayi78, sayi31, 360, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+                                    }//çemberin dilimlik alanı
+
+
+
+
+
+
+
+
+
+                                    if (islemno1 == 1)////karenin çevresi
+                                    {////karenin çevresi
+
+                                        Console.Write("Karenin kenarını yazınız:");
+                                        double sayi890 = Double.Parse(Console.ReadLine());
+                                        double islemsonucu;
+                                        islemsonucu = sayi890 + sayi890 + sayi890 + sayi890;
+                                        Console.WriteLine("Karenin çevresi {0}+{1}+{2}+{3}={4}", sayi890, sayi890, sayi890, sayi890, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+
+                                    }////karenin çevresi
+
+
+
+
+                                    if (islemno1 == 6)/////Üçgenin alanı 
+                                    {/////Üçgenin alanı 
+
+
+                                        Console.Write("Tabanı giriniz:");
+                                        double sayi6767 = Double.Parse(Console.ReadLine());
+                                        Console.Write("Yüksekliği giriniz:");
+                                        double sayi6768 = Double.Parse(Console.ReadLine());
+                                        double islemsonucu;
+                                        islemsonucu = sayi6767 * sayi6768 / 2;
+
+                                        Console.Write("Üçgenin alanı {0}*{1}/{2}={3}", sayi6767, sayi6768, 2, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+
+                                    }/////Üçgenin alanı 
+                                    else { Console.WriteLine("Yanlış sayıyı seçtiniz"); Console.ReadLine(); ; }
+                                    break;
+                                }
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+                            ///kaç kelime yazdığımı öğrenmek
+
+                            if (islemno == 2)///kaç kelime yazdığımı öğrenmek
+                                {for (; ; )
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine("Bir şeyler yazın :");
+                                    string birseyler = Console.ReadLine();
+
+                                    char[] kelimeayiran = { ' ' };
+                                    int kelimesayisi = 1;
+                                    int dsayac = 0;
+                                    do
+                                    {
+                                        bool durum = kelimeayiran.Contains(birseyler[dsayac]);
+
+                                        if (durum) kelimesayisi++;
+                                        dsayac++;
+                                    } while (dsayac < birseyler.Length);
+
+                                    Console.WriteLine("Toplam {0} tane kelime var!", kelimesayisi);
+                                    Console.WriteLine("Devam etmek için X'e basın");
+                                    Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                    ConsoleKeyInfo anahtar = Console.ReadKey();
+                                    if (anahtar.Key == ConsoleKey.X)
+                                    {
+                                        Console.Clear();
+                                        continue;
+                                    }
+                                    if (anahtar.Key == ConsoleKey.Y)
+                                    {
+                                        break;
+                                    }
+                                    Console.ReadLine();
+                                }
+                                }///kaç kelime yazdığımı öğrenmek
+                                 ///kaç kelime yazdığımı öğrenmek
+
+
+
+
+
+
+
+
+
+                            if (islemno == 3)//hesap makinesi
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                for (; ; )
+                                {
+
+                                    Console.WriteLine("Toplama işlemi için 1;");
+                                    Console.WriteLine("Çıkarma işlemi için 2;");
+                                    Console.WriteLine("Çarpma işlemi için 3;");
+                                    Console.WriteLine("Bölme işlemi için 4;");
+                                    Console.Write("Lütfen işlem seçiniz:");
+
+                                    double sayi1, sayi2, islemsonucu;
+                                    double islemno2 = Double.Parse(Console.ReadLine
+                                        ());
+                                    if (islemno2 == 1)
+                                    {
+                                        Console.Write("birinci sayıyı seçiniz:");
+                                        sayi1 = Double.Parse(Console.ReadLine());
+                                        Console.WriteLine("İkinci sayıyı giriniz:");
+                                        sayi2 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = sayi2 + sayi1;
+                                        Console.WriteLine("İşlemin sonucu {0}+{1}={2}'dir ", sayi1, sayi2, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+
+
+                                    }//hesap makinesi
+                                    if (islemno2 == 2)
+                                    {
+                                        Console.Write("Birinci sayıyı giriniz:");
+                                        sayi1 = Double.Parse(Console.ReadLine());
+                                        Console.Write("İkinci sayıyı seçiniz:");
+                                        sayi2 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = sayi1 - sayi2;
+                                        Console.WriteLine("İşlemin sonucu {0}-{1}={2}", sayi1, sayi2, islemsonucu);
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                        Console.ReadLine();
+
+                                    }//hesap makinesi
+
+                                    if (islemno2 == 3)
+                                    {
+                                        Console.Write("Birinci sayıyı giriniz:");
+                                        sayi1 = Double.Parse(Console.ReadLine());
+                                        Console.Write("İkinci sayıyı giriniz");
+                                        sayi2 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = sayi1 * sayi2;
+
+                                        Console.WriteLine("İşlem sonucu {0}*{1}={2}", sayi1, sayi2, islemsonucu);
+
+
+
+
+                                        ///
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }////
+                                         ///
+
+
+
+
+
+                                    }//hesap makinesi
+
+                                    if (islemno2 == 4)
+                                    {
+                                        Console.Write("Birinci sayıyı giriniz:");
+                                        sayi1 = Double.Parse(Console.ReadLine());
+                                        Console.Write("İkinci sayıyı giriniz:");
+                                        sayi2 = Double.Parse(Console.ReadLine());
+                                        islemsonucu = sayi1 / sayi2;
+
+                                        Console.WriteLine("İşlem sonucu {0}/{1}={2}", sayi1, sayi2, islemsonucu);
+
+                                        Console.WriteLine("Devam etmek için X'e basın");
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                        if (anahtar.Key == ConsoleKey.X)
+                                        {
+                                            Console.Clear();
+                                            continue;
+                                        }
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }
+                                    }//hesap makinesi
+
+
+
+                                    else { Console.WriteLine("Yanlış sayıyı seçtiniz");
+
+
+                                        
+                                        Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                        ConsoleKeyInfo anahtar = Console.ReadKey();
+                                     
+                                        if (anahtar.Key == ConsoleKey.Y)
+                                        {
+                                            break;
+                                        }////
+                                         ///
+
+
+
+                                        Console.ReadLine(); }
+                                }
+                             }//hesap makinesi
+
+
+
+
+
+
+
+                                if (islemno == 4)//kaç gün yaşadığını öğrenmek için 
+                                {
+                                for (; ; )
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Magenta;
+
+                                    Console.WriteLine("Kaç gün yaşadınız?");
+
+                                    Console.Write("Hangi tarihte (lütfen ay ve günü unutmayınız) doğdunuz:");
+                                    string tarihsaat = Console.ReadLine();
+                                    DateTime dt = DateTime.Parse(tarihsaat);
+                                    DateTime dtyeni = DateTime.Now;
+                                    TimeSpan ts = dtyeni - dt;
+                                    int gunsayisi = (int)ts.TotalDays;
+                                    Console.WriteLine("Gün sayısı:{0} yaşamışsınız", gunsayisi);
+                                    Console.WriteLine("Ortalama insan ömrü 25200 gündür!");
+
+                                    Console.WriteLine("Devam etmek için X'e basın");
+                                    Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                    ConsoleKeyInfo anahtar = Console.ReadKey();
+                                    if (anahtar.Key == ConsoleKey.X)
+                                    {
+                                        Console.Clear();
+                                        continue;
+                                        
+                                    }
+                                    if (anahtar.Key == ConsoleKey.Y)
+                                    {
+                                        break;
+                                    }
+
+
+
+
+                                    Console.ReadLine();
+                                }
+
+                                } //kaç gün yaşadığını öğrenmek için
+
+                                if (islemno == 5)
+                                {for (; ; )
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+
+                                    int sayi, i, f = 1;
+                                    Console.Write("Faktoriyeli alınacak sayı girin:");
+                                    sayi = Convert.ToInt16(Console.ReadLine());
+                                    for (i = 1; i <= sayi; i++)
+                                    {
+
+                                        f = i * f;
+
+                                    }
+                                    Console.WriteLine("Cevap : " + f);
+
+                                    Console.WriteLine("Devam etmek için X'e basın");
+                                    Console.WriteLine("Çıkmak  için 'Y'e basın");
+                                    ConsoleKeyInfo anahtar = Console.ReadKey();
+                                    if (anahtar.Key == ConsoleKey.X)
+                                    {
+                                        Console.Clear();
+                                        continue;
+
+                                    }
+                                    if (anahtar.Key == ConsoleKey.Y)
+                                    {
+                                        break;
+                                    }
+
+                                    Console.ReadLine();
+
+
+
+                                 }
+                                }
+
+                            }
+                        }
+
+                                if (sifre1 != sifre2 && kullaniciadi == kullaniciadi2)
+                                {
+
+                                    Console.WriteLine("ŞİFRENİZ YANLIŞ.LÜTFEN TEKRAR DENEYİNİZ.");
+                                Console.ReadLine();
+                          
+
+                                }
+
+
+                                if (sifre1 == sifre2 && kullaniciadi != kullaniciadi2)
+                                {
+
+
+                                    Console.WriteLine("Kullanıcı adınız yanlış.Lütfen tekrar deneyiniz");
+                                    Console.ReadLine();
+                            
+
+
+                                }
+                              
+                            
+                        
+
+                    }
+                }
+            
+        }
+    }
+}
+                
+       
