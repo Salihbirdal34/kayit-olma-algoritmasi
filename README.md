@@ -1,1 +1,0 @@
-# kayit-olma-algoritmasi
